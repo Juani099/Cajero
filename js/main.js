@@ -3,21 +3,22 @@
 let saldo = 5000
 
 
-function salir(){
+function salir() {
     alert("Fin del proceso")
 }
 
-function consultarSaldo(){
+
+function consultarSaldo() {
     alert("Su saldo es " + saldo)
     seleccionarOperacion()
 }
 
 
 
-function retirarDinero(monto){
-    if(monto > saldo){
+function retirarDinero(monto) {
+    if (monto > saldo) {
         alert("Fondos insuficientes")
-    } else{
+    } else {
         saldo -= monto
     }
     seleccionarOperacion();
@@ -25,24 +26,22 @@ function retirarDinero(monto){
 
 
 function seleccionarOperacion() {
-    console.log("------------")
-    console.log("1 - Consultar saldo")
-    console.log("2 - Retirar dinero")
-    console.log("3 - Salir")
-    let op = prompt("ingresar operacion")
+
+    let op = prompt("ingresar operacion 1-Consultar saldo 2-Retirar dinero 3-Salir")
     switch (op) {
         case "1":
-            consultarSaldo()
+            consultarSaldo();
+            op
             break
         case "2":
-            let monto = number(prompt("Monto a retirar"))
-            retirarDinero("monto")
+            let monto = prompt("Monto a retirar");
+            retirarDinero(monto);
             break;
         case "3":
-            salir()
+            salir();
             break
-            default:
-                console.log("Operacion invalida")
+        default:
+            alert("Operacion invalida");
     }
 }
 
